@@ -1,0 +1,25 @@
+<div class="center hero-unit">
+    <h1>Welome to conjure!!<h1>
+ </div>
+
+Select category for top ten
+<%= form_tag 'topten' %>
+  <%= select_tag "category", options_for_select(["Television","
+  Books",
+  "Mobile Apps",
+  "Movies",
+  "Video Games",
+  "Websites",
+  "Products",
+  "Music",
+  "Twitter TV" ]) %>
+<%= submit_tag %>
+
+
+<div class="topten">
+  <% unless @result.nil? %>
+    <% @result.each do |result| %>
+      <%= result %>
+    <% end %>
+  <% end %>
+</div>
